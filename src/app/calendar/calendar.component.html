@@ -1,0 +1,23 @@
+<div class="cal-wrapper">
+	<div class="cal-header">
+
+	</div>
+	<div class="cal-body">
+		<table class="cal-dates">
+			<thead>
+				<tr>
+					<td *ngFor="let day of days">
+						{{day[0]}}
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let _row of rowsA;let ri = index">
+					<td *ngFor="let _col of colsA;let ci = index">
+						{{ri === 0 && ri >= endPrintOnRow && ci < firstDayOfMonth && ci> lastDayOfMonth ? '' : '1_' + ci}}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
